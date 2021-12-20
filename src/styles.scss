@@ -15,8 +15,11 @@ body {
     border-radius: 50%;
 }
 
-.grey {
-    color: #555;
+.bullet {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+    margin: 3px 4px;
 }
-
-

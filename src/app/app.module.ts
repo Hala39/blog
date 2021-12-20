@@ -9,6 +9,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { HomeComponent } from './home/home.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditBlogComponent } from './edit-blog/edit-blog.component';
     NavigationBarComponent,
     HomeComponent,
     BlogCardComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
