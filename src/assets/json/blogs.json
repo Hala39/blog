@@ -1,0 +1,73 @@
+[
+    {
+        "id": "1",
+        "category": "Design",
+        "imageUrl": "assets/images/colorful-paint.jpg",
+        "postDate": "July 21, 2021",
+        "title": "From Sketch to Figma: Much more than a design decision",
+        "body": "As in any design team, the tools we use reflect not only in our work but, above all, our process and the way we collaborate.",
+        "author": {
+            "id": "a",
+            "name": "Luis Monteiro",
+            "title": "Design Director",
+            "imageUrl": "assets/images/author-1.jpg"
+        }
+    },
+    {
+        "id": "2",
+        "category": "Design",
+        "imageUrl": "assets/images/colored-wall.jpg",
+        "postDate": "August 15, 2021",
+        "title": "5 psychology principles for better UX design",
+        "body": "By understanding how different psychology principles influence human behavior, we can build solutions that resolve users problems",
+        "author": {
+            "id": "b",
+            "name": "Vasco Viera",
+            "title": "Product Designer",
+            "imageUrl": "assets/images/author-2.jpg"
+        }
+    },
+    {
+        "id": "3",
+        "category": "Design",
+        "imageUrl": "assets/images/post-0.jpg",
+        "postDate": "Nov 3, 2021",
+        "title": "Why you should have a product designer in your product team",
+        "body": "Having a cool idea is not enough. Success is achieved when the problem is properly identified, the solution cleverly created, and the value well delivered, so the users can recognized by using your product",
+        "author": {
+            "id": "c",
+            "name":"Eurice Coata",
+            "title": "Product Designer",
+            "imageUrl": "assets/images/author-3.jpg"
+        }
+    },
+    {
+        "id": "3",
+        "category": "Design",
+        "imageUrl": "assets/images/post-1.jpg",
+        "postDate": "Nov 3, 2021",
+        "title": "Why you should have a product designer in your product team",
+        "body": "Having a cool idea is not enough. Success is achieved when the problem is properly identified, the solution cleverly created, and the value well delivered, so the users can recognized by using your product",
+        "author": {
+            "id": "c",
+            "name":"Eurice Coata",
+            "title": "Product Designer",
+            "imageUrl": "assets/images/author-3.jpg"
+        }
+    },
+    {
+        "id": "3",
+        "category": "Design",
+        "imageUrl": "assets/images/post-1.jpg",
+        "postDate": "Nov 3, 2021",
+        "title": "Why you should have a product designer in your product team",
+        "body": "Having a cool idea is not enough. Success is achieved when the problem is properly identified, the solution cleverly created, and the value well delivered, so the users can recognized by using your product",
+        "author": {
+            "id": "c",
+            "name":"Eurice Coata",
+            "title": "Product Designer",
+            "imageUrl": "assets/images/author-3.jpg"
+        }
+    }
+]
+

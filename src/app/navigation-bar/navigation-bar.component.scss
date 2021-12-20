@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: no-wrap;
+}
+
+li {
+    display: inline;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+ul {
+    margin-top: 0;
+}
+
+.contact-button {
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.active {
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
