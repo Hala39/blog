@@ -1,10 +1,11 @@
-<header>
-    <span>website.com</span>
-    <ul>
-      <li routerLink="/work" routerLinkActive="active">Work</li>
-      <li routerLink="/culture" routerLinkActive="active">Culture</li>
-      <li routerLink="/careers" routerLinkActive="active">Careers</li>
-      <li routerLink="/" routerLinkActive="active">Blog</li>
-      <li><button class="contact-button">Get in touch</button></li>
+<nav class="nav">
+    <a href="">website.com</a>
+    <span class="fa fa-bars" (click)="displayNavigationBar = !displayNavigationBar"></span>
+    <ul *ngIf="displayNavigationBar" class="nav-list">
+        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/example']">Work</a></li>
+        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/example']">Culture</a></li>
+        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/example']">Careers</a></li>
+        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/']">Blog</a></li>
+        <li class="nav-item"><span class="dark-button">Get in touch</span></li>
     </ul>
-</header>
+</nav>
