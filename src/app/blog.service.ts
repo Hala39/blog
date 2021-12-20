@@ -18,6 +18,7 @@ export class BlogService {
 
   getBlogs() : Blog[] {
     let blogs: Blog[] =  JSON.parse(localStorage.getItem('blogs'));
+    if (!blogs || blogs.length < 1)
       this.initialSetup().subscribe();
     return blogs;
   }

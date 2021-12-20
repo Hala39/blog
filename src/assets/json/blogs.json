@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "category": "Design",
         "imageUrl": "assets/images/colorful-paint.jpg",
         "postDate": "July 21, 2021",
@@ -14,7 +14,7 @@
         }
     },
     {
-        "id": "2",
+        "id": 2,
         "category": "Design",
         "imageUrl": "assets/images/colored-wall.jpg",
         "postDate": "August 15, 2021",
@@ -28,7 +28,7 @@
         }
     },
     {
-        "id": "3",
+        "id": 3,
         "category": "Design",
         "imageUrl": "assets/images/post-0.jpg",
         "postDate": "Nov 3, 2021",
@@ -42,7 +42,7 @@
         }
     },
     {
-        "id": "3",
+        "id": 4,
         "category": "Design",
         "imageUrl": "assets/images/post-1.jpg",
         "postDate": "Nov 3, 2021",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "id": "3",
+        "id": 5,
         "category": "Design",
         "imageUrl": "assets/images/post-1.jpg",
         "postDate": "Nov 3, 2021",

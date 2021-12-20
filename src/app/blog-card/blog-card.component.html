@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="box" *ngFor="let blog of blogs">
+    <div class="box" *ngFor="let blog of blogs" [routerLink]="['/' + blog.id]">
         <img class="blog-image" [src]="blog.imageUrl" alt="">
         <div class="description">
             <div class="top-info">

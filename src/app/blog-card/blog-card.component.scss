@@ -5,6 +5,14 @@
     margin-top: 40px;
 }
 
+.box {
+    cursor: pointer;
+}
+
+.box:hover {
+    scale: 1.5;
+}
+
 .box:nth-child(1) {
     grid-column: 1 / -1;
     display: flex;
@@ -55,6 +63,15 @@
 
 .author-details {
     margin-left: 15px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.title {
+    color: #666;
+    margin-top: 2px;
 }
 
 @media screen and (max-width: 992px) and (min-width: 700px) {
