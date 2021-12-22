@@ -1,11 +1,11 @@
+
 .container {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding: 4rem 25%;
 }
 
 .submit {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-top: 4rem;
 }
 
@@ -14,14 +14,10 @@ input[type='file'] {
     width: 0px;
 }
 
-label {
-    padding: 0.5rem 0.7rem;
-    border-radius: 5px;
-}
-
 .image-selection {
     margin-top: 1rem;
     display: flex;
+    align-content: center;
 }
 
 .blog-image {

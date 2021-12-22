@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { map } from 'rxjs';
 import { Blog } from './models/blog';
 
@@ -8,12 +9,13 @@ import { Blog } from './models/blog';
 })
 export class BlogService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   private jsonFileUrl: string = "assets/json/blogs.json";
 
   initialSetup() {
-    return this.httpClient.get<Blog[]>(this.jsonFileUrl).pipe(map((blogs: Blog[]) => this.setBlogs(blogs)));
+    return this.httpClient.get<Blog[]>(this.jsonFileUrl)
+      .pipe(map((blogs: Blog[]) => this.setBlogs(blogs)));
   }
 
   getBlogs() : Blog[] {
@@ -40,14 +42,18 @@ export class BlogService {
 
   editBlog(blog: Blog) : void {
     let blogs = this.getBlogs();
-    let index = blogs.indexOf(blog);
+    let index = blogs.findIndex(b => b.id == blog.id);
     blogs[index] = blog;
     this.setBlogs(blogs);
+    this.router.navigateByUrl('/blog/' + blog.id)
+
   }
 
   deleteBlog(id: string) : void {
     let blogs = this.getBlogs();
     blogs = blogs.filter(b => b.id !== id);
     this.setBlogs(blogs);
+    this.router.navigateByUrl('/');
   }
+  
 }

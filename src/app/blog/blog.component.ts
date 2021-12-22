@@ -14,6 +14,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBlog();
+    console.log(this.blogId)
   }
 
   blog: Blog;
@@ -24,6 +25,10 @@ export class BlogComponent implements OnInit {
 
   getBlog() : void {
     this.blog = this.blogService.getBlogById(this.blogId);
+  }
+
+  deleteBlog(id: string) : void {
+    this.blogService.deleteBlog(id);
   }
 
 }

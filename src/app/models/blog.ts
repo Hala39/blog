@@ -1,7 +1,9 @@
 import { Author } from "./author";
+import { IdGenerator } from "./IdGenerator";
 
 export class Blog {
-    constructor(category: string, imageUrl: string, postDate: Date, title: string, description: string, body: string, author: Author) {
+    constructor(category: string, imageUrl: string, postDate: Date, 
+        title: string, description: string, body: string, author: Author, id?: string) {
         this.category = category,
         this.imageUrl = imageUrl,
         this.postDate = postDate,
@@ -9,7 +11,7 @@ export class Blog {
         this.description = description,
         this.body = body,
         this.author = author,
-        this.id = this.generateId()
+        this.id = id ? id : IdGenerator.generateId()
     }
 
     id: string;
@@ -20,10 +22,4 @@ export class Blog {
     body: string;
     description: string;
     author: Author;
-
-    private generateId = () : string => {
-        return Math.floor((1 + Math.random()) * 0x10000)
-            .toString(16)
-            .substring(1);
-    }
 }

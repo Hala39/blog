@@ -1,27 +1,41 @@
 <div class="container">
-    <div class="top-info">
-        <span class="category">{{ blog.category }}</span>
-        <div class="bullet"> </div>
-        <time>{{ blog.postDate  | date:'mediumDate' }}</time>
-    </div>
-    <h1>{{ blog.title }}</h1>
-    <p class="innerHtml" [innerHtml]="blog.body"></p>
-    <article class="follow-me">
-        <strong><em>Follow pixelmatters on <a>Twitter</a>, <a>Facebook</a>, <a>LinkedIn</a> and <a>Instagram</a></em></strong>
-    </article>
+  <div class="actions">
+    <i class="fas fa-pen" [routerLink]="['/edit-blog/' + blog.id]">
+      <span class="tooltip edit">Edit </span></i
+    >
+    <i class="fas fa-trash" (click)="deleteBlog(blog.id)"
+      ><span class="tooltip delete">Delete </span></i
+    >
+  </div>
+  <div class="top-info">
+    <span class="category">{{ blog.category }}</span>
+    <div class="bullet"></div>
+    <time>{{ blog.postDate | date: "mediumDate" }}</time>
+  </div>
+  <h1>{{ blog.title }}</h1>
+  <p class="innerHtml" [innerHtml]="blog.body"></p>
+  <article class="follow-me">
+    <strong
+      ><em
+        >Follow pixelmatters on <a>Twitter</a>, <a>Facebook</a>,
+        <a>LinkedIn</a> and <a>Instagram</a></em
+      ></strong
+    >
+  </article>
 
-    <article class="author">
-        <img class="avatar" [src]="blog.author.imageUrl" alt="">
-        <div class="author-details">
-            <div class="name">{{ blog.author.name }}</div>
-            <div class="title">{{ blog.author.title }}</div>
-        </div>
-        <div class="social-icons">
-            <strong>Share 
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-linkedin-in"></i>
-            </strong>
-        </div>
-    </article>
+  <article class="author">
+    <img class="avatar" [src]="blog.author.imageUrl" alt="" />
+    <div class="author-details">
+      <div class="name">{{ blog.author.name }}</div>
+      <div class="title">{{ blog.author.title }}</div>
+    </div>
+    <div class="social-icons">
+      <strong
+        >Share
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+      </strong>
+    </div>
+  </article>
 </div>

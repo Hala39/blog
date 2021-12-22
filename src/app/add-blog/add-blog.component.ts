@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from './../blog.service';
 import { Author } from './../models/author';
 import { Blog } from './../models/blog';
@@ -14,51 +15,53 @@ import { Category } from '../models/category';
 })
 export class AddBlogComponent implements OnInit {
 
-  constructor(private blogService: BlogService, private titleCasePipe: TitleCasePipe) { }
+  constructor(private blogService: BlogService, private titleCasePipe: TitleCasePipe,
+    private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-
-  onFileSelect($event: any, property?: string) {
+  onFileSelect($event: any, property: string) {
     const file = ($event.target as HTMLInputElement).files[0];
     const reader = new FileReader();
     reader.onload = () => {
-      this.blogForm.get(property).patchValue(reader.result.toString())
+      if (property === 'authorImageUrl')
+        this.authorImageUrl.patchValue(reader.result.toString());
+      else this.blogImageUrl.patchValue(reader.result.toString());
     };
     
     reader.readAsDataURL(file);
   }
 
   onCategorySelect($event: any) {
-    this.blogForm.get('blogCategory').patchValue($event.target.value);
+    this.blogCategory.patchValue($event.target.value);
   }
 
-  submit() {
-    if (this.blogForm.valid) {
-      const form = this.blogForm.value;
-      const author = new Author(this.titleCasePipe.transform(form.firstName), this.titleCasePipe.transform(form.lastName), 
-      this.titleCasePipe.transform(form.authorTitle), form.authorImageUrl);
-      const blog = new Blog(form.blogCategory, form.blogImageUrl, this.date, 
-        this.titleCasePipe.transform(form.blogTitle), form.blogDescription, form.blogBody, author);
-      this.blogService.addBlog(blog);
+  submit() : void {
+    if (this.form.valid) {
+      this.blogService.addBlog(this.createBlogObject(this.createAuthorObject()));
     } else {
-      this.blogForm.markAsDirty();
-      this.blogForm.setErrors({'submitted': true})
-      window.scrollTo(0, 0)
+      this.markFormInvalid();
     }
 
   }
 
+  editBlog() {
+    if (this.form.get('blogForm').valid) {
+      const author: Author = this.blog?.author;
+      this.blogService.editBlog(this.createBlogObject(author, this.blog.id));
+    } else {
+      this.markFormInvalid();
+    }
+  }
+
+  cancel() {
+    this.router.navigateByUrl('/blog/' + this.blog?.id)
+  }
+
   reset() {
-    this.blogForm.reset();
+    this.form.reset();
   }
-
-  get date() : Date {
-    let date = new Date();
-    return date;
-  }
-
 
   firstName = new FormControl(null, 
   {
@@ -75,7 +78,7 @@ export class AddBlogComponent implements OnInit {
     validators: [
       Validators.required,
       Validators.minLength(3), 
-      Validators.maxLength(20)
+      Validators.maxLength(200)
     ], 
     updateOn: 'blur'
   });
@@ -85,55 +88,72 @@ export class AddBlogComponent implements OnInit {
     validators: [
       Validators.required,
       Validators.minLength(3), 
-      Validators.maxLength(20)
+      Validators.maxLength(50)
     ], 
     updateOn: 'blur'
   });
 
-  blogTitle = new FormControl(null, 
+  blogTitle = new FormControl(this.blog?.title || null, 
   {
     validators: [
       Validators.required,
       Validators.minLength(3), 
-      Validators.maxLength(20)
+      Validators.maxLength(200)
     ], 
     updateOn: 'blur'
   });
 
-  blogDescription = new FormControl(null, 
+  blogDescription = new FormControl(this.blog?.description || null, 
     {
       validators: [
         Validators.required,
         Validators.minLength(20), 
-        Validators.maxLength(50)
+        Validators.maxLength(400)
       ], 
       updateOn: 'blur'
     });
 
-  blogBody = new FormControl(null, 
+  blogBody = new FormControl(this.blog?.body || null, 
   {
     validators: [
-      Validators.required, Validators.minLength(100), Validators.maxLength(1000)
+      Validators.required, Validators.minLength(100), Validators.maxLength(5000)
     ],
     updateOn: 'blur'
   });
 
-  blogCategory = new FormControl(0);
-  blogImageUrl = new FormControl(null, Validators.required);
+  blogCategory = new FormControl(this.blog?.category || 'Design');
+  blogImageUrl = new FormControl(this.blog?.imageUrl || null, Validators.required);
   authorImageUrl = new FormControl(null, Validators.required);
 
 
-  blogForm = new FormGroup ({
-    firstName: this.firstName,
-    lastName: this.lastName,
-    authorTitle: this.authorTitle,
-    authorImageUrl: this.authorImageUrl,
-    blogTitle: this.blogTitle,
-    blogDescription: this.blogDescription,
-    blogBody: this.blogBody,
-    blogCategory: this.blogCategory,
-    blogImageUrl: this.blogImageUrl
+  form = new FormGroup ({
+    authorForm: new FormGroup({
+      firstName: this.firstName,
+      lastName: this.lastName,
+      authorTitle: this.authorTitle,
+      authorImageUrl: this.authorImageUrl,
+    }),
+
+    blogForm: new FormGroup({
+      blogTitle: this.blogTitle,
+      blogDescription: this.blogDescription,
+      blogBody: this.blogBody,
+      blogCategory: this.blogCategory,
+      blogImageUrl: this.blogImageUrl
+    })
   })
+
+  get blog() : Blog {
+    return this.blogService.getBlogById(this.blogId);
+  }
+
+  get isEditMode() : boolean {
+    return this.router.url.includes('edit');
+  }
+
+  get blogId() : string {
+    return this.activatedRoute.snapshot.paramMap.get("id") || null;
+  }
 
   get categories() : string[] {
     let categories = [];
@@ -145,6 +165,32 @@ export class AddBlogComponent implements OnInit {
     }
 
     return categories;
+  }
+
+  private createBlogObject(author: Author, id?: string) : Blog {
+    const blog = new Blog(this.blogCategory.value, this.blogImageUrl.value, this.date, 
+      this.titleCasePipe.transform(this.blogTitle.value), 
+      this.blogDescription.value, this.blogBody.value, author, id? id : null);
+    return blog;
+  }
+
+  private createAuthorObject() : Author {
+    const author = new Author(this.titleCasePipe.transform(this.firstName.value), 
+      this.titleCasePipe.transform(this.lastName.value), 
+      this.titleCasePipe.transform(this.authorTitle.value), 
+      this.authorImageUrl.value);
+    return author;
+  }
+
+  private markFormInvalid() : void {
+    this.form.markAsDirty();
+    this.form.setErrors({'submitted': true})
+    window.scrollTo(0, 0)
+  }
+
+  get date() : Date {
+    let date = new Date();
+    return date;
   }
 
 }
