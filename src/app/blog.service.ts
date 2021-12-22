@@ -23,7 +23,7 @@ export class BlogService {
     return blogs;
   }
 
-  getBlogById(id: number) : Blog {
+  getBlogById(id: string) : Blog {
     const blogs = this.getBlogs();
     return blogs.find(b => b.id === id);
   }
@@ -45,7 +45,7 @@ export class BlogService {
     this.setBlogs(blogs);
   }
 
-  deleteBlog(id: number) : void {
+  deleteBlog(id: string) : void {
     let blogs = this.getBlogs();
     blogs = blogs.filter(b => b.id !== id);
     this.setBlogs(blogs);

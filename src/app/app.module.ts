@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { BlogComponent } from './blog/blog.component';
+import { AddBlogComponent } from './add-blog/add-blog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { BlogComponent } from './blog/blog.component';
     HomeComponent,
     BlogCardComponent,
     EditBlogComponent,
-    BlogComponent
+    BlogComponent,
+    AddBlogComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

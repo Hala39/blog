@@ -15,36 +15,12 @@ span, p {
     line-height: 1.5;
 }
 
-li {
+::ng-deep .innerHtml li {
     margin-top: 2rem;
 }
 
-a {
-    color: tomato;
-}
-
-.follow-me {
+article {
     margin-top: 5rem;
-}
-
-.author {
-    display: flex;
-    align-items: center;
-    margin-top: 5rem;
-}
-
-.author-details {
-    margin-left: 15px;
-}
-
-.name, strong {
-    font-weight: bold;
-    color: #333;
-}
-
-.title {
-    color: #666;
-    margin-top: 2px;
 }
 
 .social-icons {
@@ -58,7 +34,7 @@ a {
 
 @media screen and (max-width: 992px) {
     .container {
-        padding: 5% 10%;
+        padding: 5%;
     }
 }
 

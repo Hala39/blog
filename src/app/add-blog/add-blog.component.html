@@ -1,0 +1,75 @@
+<div class="container">
+    <h1>Create a Blog</h1>
+    <p>A blog is Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro dolores harum aspernatur vitae animi iusto rem veritatis eum quas aliquam 
+        incidunt impedit, omnis, temporibus autem.</p>
+
+    <form [formGroup]="blogForm">
+        <div class="fieldset">
+            <h2>Personal Information</h2>
+            <input type="text" placeholder="First Name" autofocus formControlName="firstName"
+            [class]="(firstName.dirty || blogForm.hasError('submitted')) && (!firstName.valid || firstName.hasError('required'))? 'invalid-input' : '' ">
+            <small class="error" *ngIf="firstName.dirty && (firstName.hasError('minlength') || firstName.hasError('maxlength'))">
+                Your first name is between 3 and 20 characters
+            </small>
+
+            <input type="text" placeholder="Last Name" formControlName="lastName"
+            [class]="(lastName.dirty || blogForm.hasError('submitted')) && (!lastName.valid || lastName.hasError('required'))? 'invalid-input' : '' ">
+            <small class="error" *ngIf="lastName.dirty && (lastName.hasError('minlength') || lastName.hasError('maxlength'))">
+                Your last name is between 3 and 20 characters
+            </small>
+
+            <input type="text" placeholder="Job/ Title/ Position" formControlName="authorTitle"
+            [class]="(authorTitle.dirty || blogForm.hasError('submitted')) && (!authorTitle.valid || authorTitle.hasError('required'))? 'invalid-input' : '' ">
+            <small class="error" *ngIf="authorTitle.dirty && (authorTitle.hasError('minlength') || authorTitle.hasError('maxlength'))">
+                Your title name is between 3 and 20 characters
+            </small>
+
+            <div class="image-selection">
+                <label for="author-image" [class]="authorImageUrl.hasError('required') && blogForm.hasError('submitted')? 'error' : '' ">Choose a profile photo </label>
+                <input id="author-image" type="file" accept="image/*" (change)="onFileSelect($event, 'authorImageUrl')">
+                <div class="image-preview" *ngIf="blogForm.get('authorImageUrl').value !== null">
+                    <img class="avatar" [src]="authorImageUrl.value" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <div class="fieldset">
+            <h2>Blog Details</h2>
+            <input type="text" placeholder="Blog Title" formControlName="blogTitle"
+            [class]="(blogTitle.dirty || blogForm.hasError('submitted')) && (!blogTitle.valid || blogTitle.hasError('required'))? 'invalid-input' : '' ">
+            <small class="error" *ngIf="blogTitle.dirty && (blogTitle.hasError('minlength') || blogTitle.hasError('maxlength'))">
+                Your blog title is between 3 and 20 characters
+            </small>
+
+            <input type="text" placeholder="Blog Description" formControlName="blogDescription"
+            [class]="(blogDescription.dirty || blogForm.hasError('submitted')) && (!blogDescription.valid || blogDescription.hasError('required'))? 'invalid-input' : '' ">
+            <small class="error" *ngIf="blogDescription.dirty && (blogDescription.hasError('minlength') || blogDescription.hasError('maxlength'))">
+                Your blog description is between 20 and 50 characters
+            </small>
+            
+            <select (change)="onCategorySelect($event)">
+                <option  *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+
+            <textarea cols="30" rows="15" placeholder="Type here .." formControlName="blogBody"
+            [class]="(blogBody.dirty || blogForm.hasError('submitted')) && (!blogBody.valid || blogBody.hasError('required'))? 'invalid-input' : '' "></textarea>
+            <small class="error" *ngIf="blogBody.dirty && (blogBody.hasError('minlength') || blogBody.hasError('maxlength'))">
+                Your blog content is between 100 and 1000 characters
+            </small>
+            
+            <div class="image-selection">
+                <label for="blog-photo" [class]="blogImageUrl.hasError('required') && blogForm.hasError('submitted')? 'error' : '' ">
+                    Give your blog a photo </label>
+                <input id="blog-photo" type="file" accept="image/*" (change)="onFileSelect($event, 'blogImageUrl')">
+                <div class="image-preview" *ngIf="blogForm.get('blogImageUrl').value !== null">
+                    <img class="blog-image" [src]="blogForm.get('blogImageUrl').value" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="submit">
+            <button type="submit" class="button" (click)="reset()">Reset data</button>
+            <button type="submit" class="button dark-button" (click)="submit()">Submit</button>
+        </div>
+    </form>
+</div>

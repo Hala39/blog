@@ -18,8 +18,8 @@ export class BlogComponent implements OnInit {
 
   blog: Blog;
 
-  get blogId() : number {
-    return +this.activatedRoute.snapshot.paramMap.get("id");
+  get blogId() : string {
+    return this.activatedRoute.snapshot.paramMap.get("id");
   }
 
   getBlog() : void {

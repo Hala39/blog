@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogs = this.blogService.getBlogs();
-    console.log(this.blogs)
   }
 
   blogs: Blog[];
