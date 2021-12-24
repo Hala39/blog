@@ -1,4 +1,4 @@
-import { BlogService } from './blog.service';
+import { BlogService } from './services/blog.service';
 import { Component } from '@angular/core';
 
 @Component({

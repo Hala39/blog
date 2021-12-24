@@ -6,19 +6,19 @@
     (click)="displayNavigationBar = !displayNavigationBar"
   />
   <ul *ngIf="displayNavigationBar" class="nav-list" @toggle>
-    <li class="nav-item">
+    <li class="nav-item" (click)="displayNavigationBar = false">
       <a routerLinkActive="active">Work</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" (click)="displayNavigationBar = false">
       <a routerLinkActive="active">Culture</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" (click)="displayNavigationBar = false">
       <a routerLinkActive="active">Careers</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" (click)="displayNavigationBar = false">
       <a routerLinkActive="active" [routerLink]="['/']">Blog</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" (click)="displayNavigationBar = false">
       <span class="button" [routerLink]="['/add-blog']">New Blog</span>
     </li>
   </ul>

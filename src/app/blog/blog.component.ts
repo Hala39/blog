@@ -1,5 +1,5 @@
 import { fade } from './../animations/fade';
-import { BlogService } from './../blog.service';
+import { BlogService } from '../services/blog.service';
 import { Blog } from './../models/blog';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';

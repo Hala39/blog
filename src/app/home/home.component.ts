@@ -1,4 +1,4 @@
-import { BlogService } from './../blog.service';
+import { BlogService } from '../services/blog.service';
 import { Component, OnInit } from '@angular/core';
 import { Blog } from '../models/blog';
 import { fade } from '../animations/fade';

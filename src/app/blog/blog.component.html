@@ -1,15 +1,7 @@
 <div @fade class="container">
   <div class="actions">
-    <img
-      class="icon"
-      src="assets/images/icons/edit.png"
-      [routerLink]="['/edit-blog/' + blog.id]"
-    />
-    <img
-      class="icon"
-      src="assets/images/icons/trash.png"
-      (click)="deleteBlog(blog.id)"
-    />
+    <i class="fas fa-pencil icon" [routerLink]="['/edit-blog/' + blog.id]"></i>
+    <i class="fas fa-trash icon" (click)="deleteBlog(blog.id)"></i>
   </div>
   <div class="top-info">
     <span class="category">{{ blog.category }}</span>
@@ -29,7 +21,7 @@
   </article>
 
   <article class="author">
-    <img class="avatar" [src]="blog.author.imageUrl" alt="" />
+    <img class="avatar" [src]="blog.author.imageUrl" />
     <div class="author-details">
       <div class="name">{{ blog.author.name }}</div>
       <div class="title">{{ blog.author.title }}</div>
@@ -37,17 +29,9 @@
     <div class="social-icons">
       <strong
         >Share
-        <img
-          class="brand-icons"
-          src="assets/images/icons/facebook.png"
-          alt=""
-        />
-        <img class="brand-icons" src="assets/images/icons/twitter.png" alt="" />
-        <img
-          class="brand-icons"
-          src="assets/images/icons/instagram.png"
-          alt=""
-        />
+        <i class="fab fa-facebook brand-icon"></i>
+        <i class="fab fa-twitter brand-icon"></i>
+        <i class="fab fa-linkedin brand-icon"></i>
       </strong>
     </div>
   </article>
