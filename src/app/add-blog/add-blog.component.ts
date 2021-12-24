@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
 import { Category } from '../models/category';
+import { fade } from '../animations/fade';
 
 @Component({
   selector: 'app-add-blog',
   templateUrl: './add-blog.component.html',
   styleUrls: ['./add-blog.component.scss'],
-  providers: [TitleCasePipe]
+  providers: [TitleCasePipe],
+  animations: [fade]
 })
 export class AddBlogComponent implements OnInit {
 

@@ -5,10 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'blog/:id', component: BlogComponent },
-  { path: 'add-blog', component: AddBlogComponent },
-  { path: 'edit-blog/:id', component: AddBlogComponent }
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'blog/:id', component: BlogComponent, pathMatch: 'full' },
+  { path: 'add-blog', component: AddBlogComponent, pathMatch: 'full' },
+  { path: 'edit-blog/:id', component: AddBlogComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

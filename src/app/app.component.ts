@@ -1,5 +1,5 @@
+import { BlogService } from './blog.service';
 import { Component } from '@angular/core';
-import { Category } from './models/category';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,10 @@ import { Category } from './models/category';
 })
 export class AppComponent {
   title = 'Blog';
+
+  constructor(private blogService: BlogService) {
+    this.blogService.initialSetup();
+  }
 
   ngOnInit() {
   

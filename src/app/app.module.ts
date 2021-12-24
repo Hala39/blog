@@ -8,10 +8,10 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { BlogCardComponent } from './blog-card/blog-card.component';
-import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { BlogComponent } from './blog/blog.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -19,7 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavigationBarComponent,
     HomeComponent,
     BlogCardComponent,
-    EditBlogComponent,
     BlogComponent,
     AddBlogComponent
   ],
@@ -28,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

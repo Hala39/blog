@@ -1,11 +1,25 @@
 <nav class="nav">
-    <a href="">website.com</a>
-    <span class="fa fa-bars" (click)="displayNavigationBar = !displayNavigationBar"></span>
-    <ul *ngIf="displayNavigationBar" class="nav-list">
-        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/example']">Work</a></li>
-        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/example']">Culture</a></li>
-        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/example']">Careers</a></li>
-        <li class="nav-item"><a routerLinkActive="active" [routerLink]="['/']">Blog</a></li>
-        <li class="nav-item"><span class="dark-button" [routerLink]="['/add-blog']">New Blog</span></li>
-    </ul>
+  <a routerLink="/">website.com</a>
+  <img
+    class="icon"
+    src="assets/images/icons/menu.png"
+    (click)="displayNavigationBar = !displayNavigationBar"
+  />
+  <ul *ngIf="displayNavigationBar" class="nav-list" @toggle>
+    <li class="nav-item">
+      <a routerLinkActive="active">Work</a>
+    </li>
+    <li class="nav-item">
+      <a routerLinkActive="active">Culture</a>
+    </li>
+    <li class="nav-item">
+      <a routerLinkActive="active">Careers</a>
+    </li>
+    <li class="nav-item">
+      <a routerLinkActive="active" [routerLink]="['/']">Blog</a>
+    </li>
+    <li class="nav-item">
+      <span class="button" [routerLink]="['/add-blog']">New Blog</span>
+    </li>
+  </ul>
 </nav>

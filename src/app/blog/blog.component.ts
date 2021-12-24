@@ -1,3 +1,4 @@
+import { fade } from './../animations/fade';
 import { BlogService } from './../blog.service';
 import { Blog } from './../models/blog';
 import { Component, OnInit } from '@angular/core';
@@ -6,7 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  styleUrls: ['./blog.component.scss'],
+  animations: [fade]
 })
 export class BlogComponent implements OnInit {
 
@@ -14,7 +16,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBlog();
-    console.log(this.blogId)
+    window.scrollTo(0, 0);
   }
 
   blog: Blog;

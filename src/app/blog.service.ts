@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Blog } from './models/blog';
 
 @Injectable({
@@ -15,13 +15,19 @@ export class BlogService {
 
   initialSetup() {
     return this.httpClient.get<Blog[]>(this.jsonFileUrl)
-      .pipe(map((blogs: Blog[]) => this.setBlogs(blogs)));
+      .pipe(map((blogs: Blog[]) => {
+        this.setBlogs(blogs);
+        window.location.reload();
+        return blogs;
+      }));
+
   }
 
-  getBlogs() : Blog[] {
-    let blogs: Blog[] =  JSON.parse(localStorage.getItem('blogs'));
-    if (!blogs || blogs.length < 1)
-      this.initialSetup().subscribe();
+  getBlogs() {
+    let blogs: Blog[] = JSON.parse(localStorage.getItem('blogs'));
+    if (!blogs)
+      this.initialSetup().subscribe(res => blogs = res);
+
     return blogs;
   }
 
@@ -38,6 +44,7 @@ export class BlogService {
     let blogs = this.getBlogs();
     blogs = [blog, ...blogs];
     this.setBlogs(blogs);
+    this.router.navigateByUrl('/')
   }
 
   editBlog(blog: Blog) : void {

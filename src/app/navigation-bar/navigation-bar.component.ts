@@ -1,12 +1,10 @@
-import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { fromEvent, ReplaySubject, takeUntil } from 'rxjs';
+import { toggle } from './../animations/toggle';
+import { Component, HostListener, OnInit } from '@angular/core';
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.scss'],
-  animations: [
-    
-  ]
+  animations: [toggle]
 })
 export class NavigationBarComponent implements OnInit {
 
@@ -21,6 +19,10 @@ export class NavigationBarComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.displayNavigationBar = event.target.innerWidth > 768;
+  }
+
+  hi() {
+    alert("hi")
   }
 
 }

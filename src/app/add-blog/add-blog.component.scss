@@ -1,31 +1,37 @@
-
 .container {
-    padding: 4rem 25%;
+  padding: 4rem 20%;
 }
 
 .submit {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem;
 }
 
-input[type='file'] {
-    visibility: hidden;
-    width: 0px;
+input[type="file"] {
+  visibility: hidden;
+  width: 0px;
 }
 
 .image-selection {
-    margin-top: 1rem;
-    display: flex;
-    align-content: center;
+  margin-top: 1rem;
+  display: flex;
+  align-content: center;
 }
 
 .blog-image {
-    height: 40px;
-    width: 40px;
+  height: 40px;
+  width: 40px;
 }
 
-button:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 3rem 10%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 0;
+  }
 }
