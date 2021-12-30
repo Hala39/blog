@@ -26,11 +26,11 @@ export class BlogComponent implements OnInit {
   }
 
   getBlog() : void {
-    this.blog = this.blogService.getBlogById(this.blogId);
+    this.blogService.getBlogById(this.blogId).subscribe(blog => this.blog = blog);
   }
 
   deleteBlog(id: string) : void {
-    this.blogService.deleteBlog(id);
+    this.blogService.deleteBlog(id).subscribe();
   }
 
 }

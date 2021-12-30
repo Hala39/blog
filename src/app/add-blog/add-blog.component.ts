@@ -18,7 +18,9 @@ import { fade } from '../animations/fade';
 export class AddBlogComponent implements OnInit {
 
   constructor(private blogService: BlogService, private titleCasePipe: TitleCasePipe,
-    private activatedRoute: ActivatedRoute, private router: Router) { }
+    private activatedRoute: ActivatedRoute, private router: Router) { 
+      this.setBlog();
+    }
 
   ngOnInit(): void {
   }
@@ -27,9 +29,12 @@ export class AddBlogComponent implements OnInit {
     const file = ($event.target as HTMLInputElement).files[0];
     const reader = new FileReader();
     reader.onload = () => {
-      if (property === 'authorImageUrl')
+      if (property === 'authorImageUrl') 
         this.authorImageUrl.patchValue(reader.result.toString());
-      else this.blogImageUrl.patchValue(reader.result.toString());
+      else {
+        this.blogImageUrl.patchValue(reader.result.toString());
+        this.blogImageUrl.markAsDirty();
+      }
     };
     
     reader.readAsDataURL(file);
@@ -37,11 +42,14 @@ export class AddBlogComponent implements OnInit {
 
   onCategorySelect($event: any) {
     this.blogCategory.patchValue($event.target.value);
+    this.blogCategory.markAsDirty();
   }
 
   submit() : void {
     if (this.form.valid) {
-      this.blogService.addBlog(this.createBlogObject(this.createAuthorObject()));
+      this.blogService
+        .addBlog(this.createBlogObject(this.createAuthorObject()))
+        .subscribe();
     } else {
       this.markFormInvalid();
     }
@@ -51,14 +59,15 @@ export class AddBlogComponent implements OnInit {
   editBlog() {
     if (this.form.get('blogForm').valid) {
       const author: Author = this.blog?.author;
-      this.blogService.editBlog(this.createBlogObject(author, this.blog.id));
+      this.blogService.updateBlog(this.createBlogObject(author, this.blogId))
+        .subscribe();
     } else {
       this.markFormInvalid();
     }
   }
 
   cancel() {
-    this.router.navigateByUrl('/blog/' + this.blog?.id)
+    this.router.navigateByUrl('/blog/' + this.blogId)
   }
 
   reset() {
@@ -95,36 +104,36 @@ export class AddBlogComponent implements OnInit {
     updateOn: 'blur'
   });
 
-  blogTitle = new FormControl(this.blog?.title || null, 
+  blogTitle = new FormControl(null, 
   {
     validators: [
       Validators.required,
       Validators.minLength(3), 
       Validators.maxLength(200)
     ], 
-    updateOn: 'blur'
+    updateOn: this.isEditMode? 'change' : 'blur'
   });
 
-  blogDescription = new FormControl(this.blog?.description || null, 
+  blogDescription = new FormControl(null, 
     {
       validators: [
         Validators.required,
         Validators.minLength(20), 
         Validators.maxLength(400)
       ], 
-      updateOn: 'blur'
+      updateOn: this.isEditMode? 'change' : 'blur'
     });
 
-  blogBody = new FormControl(this.blog?.body || null, 
+  blogBody = new FormControl(null, 
   {
     validators: [
       Validators.required, Validators.minLength(100), Validators.maxLength(5000)
     ],
-    updateOn: 'blur'
+    updateOn: this.isEditMode? 'change' : 'blur'
   });
 
-  blogCategory = new FormControl(this.blog?.category || 'Design');
-  blogImageUrl = new FormControl(this.blog?.imageUrl || null, Validators.required);
+  blogCategory = new FormControl('');
+  blogImageUrl = new FormControl(null, Validators.required);
   authorImageUrl = new FormControl(null, Validators.required);
 
 
@@ -145,8 +154,18 @@ export class AddBlogComponent implements OnInit {
     })
   })
 
-  get blog() : Blog {
-    return this.blogService.getBlogById(this.blogId);
+  blog: Blog;
+
+  setBlog() {
+    if (this.blogId)
+      this.blogService.getBlogById(this.blogId).subscribe(res => {
+        this.blogBody.patchValue(res.body);
+        this.blogCategory.patchValue(res.category);
+        this.blogDescription.patchValue(res.description);
+        this.blogImageUrl.patchValue(res.imageUrl);
+        this.blogTitle.patchValue(res.title)
+      });
+
   }
 
   get isEditMode() : boolean {
@@ -158,7 +177,7 @@ export class AddBlogComponent implements OnInit {
   }
 
   get categories() : string[] {
-    let categories = [];
+    let categories = [(this.blogCategory.value || 'Design ')];
     for (let item in Category) {
       if (isNaN(Number(item))) {
         categories.push(item)
@@ -170,7 +189,7 @@ export class AddBlogComponent implements OnInit {
   }
 
   private createBlogObject(author: Author, id?: string) : Blog {
-    const blog = new Blog(this.blogCategory.value, this.blogImageUrl.value, this.date, 
+    const blog = new Blog(this.blogCategory.value, this.blogImageUrl.value,
       this.titleCasePipe.transform(this.blogTitle.value), 
       this.blogDescription.value, this.blogBody.value, author, id? id : null);
     return blog;
@@ -188,11 +207,6 @@ export class AddBlogComponent implements OnInit {
     this.form.markAsDirty();
     this.form.setErrors({'submitted': true})
     window.scrollTo(0, 0)
-  }
-
-  get date() : Date {
-    let date = new Date();
-    return date;
   }
 
 }

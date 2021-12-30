@@ -1,41 +1,9 @@
 [
     {
-        "id": "1",
         "category": "Design",
-        "imageUrl": "assets/images/colorful-paint.jpg",
-        "postDate": "July 21, 2021",
-        "title": "From Sketch to Figma: Much more than a design decision",
-        "description": "As in any design team, the tools we use reflect not only in our work but, above all, our process and the way we collaborate.",
-        "body":"<h2>How Figma won our heart</h2><p>could you imagine a place where you design, prototype, animate Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt dicta debitis? Earum velit, at excepturi corrupti nisi quaerat soluta magnam laudantium ut quis cumque laboriosam odit magni, error natus. </p><br><p>It won our heart in different ways:</p><ol><li><strong>First it is available in any platform, being browser based __</strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>All projects organized and available in one single place ready to start building __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quis voluptas sint? Delectus excepturi vero temporibus obcaecati? Sunt aspernatur asperiores eligendi, officiis perferendis obcaecati doloremque. Officiis unde veritatis sit dolorum. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Multiple people can work on the same project at the same time __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Prototyping and animations <a href=''>(won't even speak about smart animations)</a> __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><span>And a lot of incredible features, even though the above were enough to justify the shift.</span></li></ol>",
-        "author": {
-            "id": "a",
-            "name": "Luis Monteiro",
-            "title": "Design Director",
-            "imageUrl": "assets/images/author-1.jpg"
-        }
-    },
-    {
-        "id": "2",
-        "category": "Design",
-        "imageUrl": "assets/images/colored-wall.jpg",
-        "postDate": "August 15, 2021",
-        "title": "5 psychology principles for better UX design",
-        "description": "By understanding how different psychology principles influence human behavior, we can build solutions that resolve users problems",
-        "body":"<h2>How Figma won our heart</h2><p>could you imagine a place where you design, prototype, animate Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt dicta debitis? Earum velit, at excepturi corrupti nisi quaerat soluta magnam laudantium ut quis cumque laboriosam odit magni, error natus. </p><br><p>It won our heart in different ways:</p><ol><li><strong>First it is available in any platform, being browser based __</strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>All projects organized and available in one single place ready to start building __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quis voluptas sint? Delectus excepturi vero temporibus obcaecati? Sunt aspernatur asperiores eligendi, officiis perferendis obcaecati doloremque. Officiis unde veritatis sit dolorum. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Multiple people can work on the same project at the same time __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Prototyping and animations <a href=''>(won't even speak about smart animations)</a> __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><span>And a lot of incredible features, even though the above were enough to justify the shift.</span></li></ol>",
-        "author": {
-            "id": "b",
-            "name": "Vasco Viera",
-            "title": "Product Designer",
-            "imageUrl": "assets/images/author-2.jpg"
-        }
-    },
-    {
-        "id": "3",
-        "category": "Design",
-        "imageUrl": "assets/images/post-0.jpg",
-        "postDate": "Nov 3, 2021",
+        "imageUrl": "assets/images/post-1.jpg",
         "title": "Why you should have a product designer in your product team",
-        "description": "As in any design team, the tools we use reflect not only in our work but, above all, our process and the way we collaborate.",
+        "description":"By understanding how different psychology principles influence human behavior, we can build solutions that resolve users problems",
         "body": "<h2>How Figma won our heart</h2><p>could you imagine a place where you design, prototype, animate Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt dicta debitis? Earum velit, at excepturi corrupti nisi quaerat soluta magnam laudantium ut quis cumque laboriosam odit magni, error natus. </p><br><p>It won our heart in different ways:</p><ol><li><strong>First it is available in any platform, being browser based __</strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>All projects organized and available in one single place ready to start building __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quis voluptas sint? Delectus excepturi vero temporibus obcaecati? Sunt aspernatur asperiores eligendi, officiis perferendis obcaecati doloremque. Officiis unde veritatis sit dolorum. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Multiple people can work on the same project at the same time __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Prototyping and animations <a href=''>(won't even speak about smart animations)</a> __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><span>And a lot of incredible features, even though the above were enough to justify the shift.</span></li></ol>",
         "author": {
             "id": "c",
@@ -45,10 +13,8 @@
         }
     },
     {
-        "id": "4",
         "category": "Design",
         "imageUrl": "assets/images/post-1.jpg",
-        "postDate": "Nov 3, 2021",
         "title": "Why you should have a product designer in your product team",
         "description": "Having a cool idea is not enough. Success is achieved when the problem is properly identified, the solution cleverly created, and the value well delivered, so the users can recognized by using your product.",
         "body":"<h2>How Figma won our heart</h2><p>could you imagine a place where you design, prototype, animate Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt dicta debitis? Earum velit, at excepturi corrupti nisi quaerat soluta magnam laudantium ut quis cumque laboriosam odit magni, error natus. </p><br><p>It won our heart in different ways:</p><ol><li><strong>First it is available in any platform, being browser based __</strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>All projects organized and available in one single place ready to start building __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quis voluptas sint? Delectus excepturi vero temporibus obcaecati? Sunt aspernatur asperiores eligendi, officiis perferendis obcaecati doloremque. Officiis unde veritatis sit dolorum. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Multiple people can work on the same project at the same time __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Prototyping and animations <a href=''>(won't even speak about smart animations)</a> __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><span>And a lot of incredible features, even though the above were enough to justify the shift.</span></li></ol>",
@@ -60,12 +26,10 @@
         }
     },
     {
-        "id": "5",
         "category": "Design",
-        "imageUrl": "assets/images/post-1.jpg",
-        "postDate": "Nov 3, 2021",
+        "imageUrl": "assets/images/post-0.jpg",
         "title": "Why you should have a product designer in your product team",
-        "description":"By understanding how different psychology principles influence human behavior, we can build solutions that resolve users problems",
+        "description": "As in any design team, the tools we use reflect not only in our work but, above all, our process and the way we collaborate.",
         "body": "<h2>How Figma won our heart</h2><p>could you imagine a place where you design, prototype, animate Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt dicta debitis? Earum velit, at excepturi corrupti nisi quaerat soluta magnam laudantium ut quis cumque laboriosam odit magni, error natus. </p><br><p>It won our heart in different ways:</p><ol><li><strong>First it is available in any platform, being browser based __</strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>All projects organized and available in one single place ready to start building __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quis voluptas sint? Delectus excepturi vero temporibus obcaecati? Sunt aspernatur asperiores eligendi, officiis perferendis obcaecati doloremque. Officiis unde veritatis sit dolorum. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Multiple people can work on the same project at the same time __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Prototyping and animations <a href=''>(won't even speak about smart animations)</a> __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><span>And a lot of incredible features, even though the above were enough to justify the shift.</span></li></ol>",
         "author": {
             "id": "c",
@@ -73,6 +37,33 @@
             "title": "Product Designer",
             "imageUrl": "assets/images/author-3.jpg"
         }
+    },
+    {
+        "category": "Design",
+        "imageUrl": "assets/images/colored-wall.jpg",
+        "title": "5 psychology principles for better UX design",
+        "description": "By understanding how different psychology principles influence human behavior, we can build solutions that resolve users problems",
+        "body":"<h2>How Figma won our heart</h2><p>could you imagine a place where you design, prototype, animate Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt dicta debitis? Earum velit, at excepturi corrupti nisi quaerat soluta magnam laudantium ut quis cumque laboriosam odit magni, error natus. </p><br><p>It won our heart in different ways:</p><ol><li><strong>First it is available in any platform, being browser based __</strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>All projects organized and available in one single place ready to start building __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quis voluptas sint? Delectus excepturi vero temporibus obcaecati? Sunt aspernatur asperiores eligendi, officiis perferendis obcaecati doloremque. Officiis unde veritatis sit dolorum. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Multiple people can work on the same project at the same time __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Prototyping and animations <a href=''>(won't even speak about smart animations)</a> __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><span>And a lot of incredible features, even though the above were enough to justify the shift.</span></li></ol>",
+        "author": {
+            "id": "b",
+            "name": "Vasco Viera",
+            "title": "Product Designer",
+            "imageUrl": "assets/images/author-2.jpg"
+        }
+    },
+    {
+        "category": "Design",
+        "imageUrl": "assets/images/colorful-paint.jpg",
+        "title": "From Sketch to Figma: Much more than a design decision",
+        "description": "As in any design team, the tools we use reflect not only in our work but, above all, our process and the way we collaborate.",
+        "body":"<h2>How Figma won our heart</h2><p>could you imagine a place where you design, prototype, animate Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus deserunt dicta debitis? Earum velit, at excepturi corrupti nisi quaerat soluta magnam laudantium ut quis cumque laboriosam odit magni, error natus. </p><br><p>It won our heart in different ways:</p><ol><li><strong>First it is available in any platform, being browser based __</strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>All projects organized and available in one single place ready to start building __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam quis voluptas sint? Delectus excepturi vero temporibus obcaecati? Sunt aspernatur asperiores eligendi, officiis perferendis obcaecati doloremque. Officiis unde veritatis sit dolorum. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Multiple people can work on the same project at the same time __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><strong>Prototyping and animations <a href=''>(won't even speak about smart animations)</a> __ </strong><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore hic minima unde eius, harum aut itaque cupiditate odio. Voluptas, alias? Vero minus illo blanditiis sit nisi repudiandae, consequatur consectetur quis.</span></li><li><span>And a lot of incredible features, even though the above were enough to justify the shift.</span></li></ol>",
+        "author": {
+            "id": "a",
+            "name": "Luis Monteiro",
+            "title": "Design Director",
+            "imageUrl": "assets/images/author-1.jpg"
+        }
     }
+    
 ]
 

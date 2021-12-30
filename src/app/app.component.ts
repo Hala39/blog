@@ -8,12 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Blog';
-
-  constructor(private blogService: BlogService) {
-    this.blogService.initialSetup();
-  }
-
-  ngOnInit() {
-  
-  }
 }

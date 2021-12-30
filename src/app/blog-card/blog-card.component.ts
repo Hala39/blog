@@ -14,5 +14,8 @@ export class BlogCardComponent implements OnInit {
   }
 
   @Input() blogs: Blog[] = [];
-  
+
+  trackByFn(index: number, blog: Blog) {
+    return blog;
+  }
 }

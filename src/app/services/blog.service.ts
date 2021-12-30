@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Blog } from '../models/blog';
 
 @Injectable({
@@ -12,55 +13,47 @@ export class BlogService {
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   private jsonFileUrl: string = "assets/json/blogs.json";
+  private baseUrl = environment.apiUrl + 'blogs/';
 
-  initialSetup() {
-    return this.httpClient.get<Blog[]>(this.jsonFileUrl)
-      .pipe(map((blogs: Blog[]) => {
-        this.setBlogs(blogs);
-        window.location.reload();
-        return blogs;
-      }));
-
+  initialSetUp() {
+    return this.httpClient.get<Blog[]>(this.jsonFileUrl).pipe(map(
+      blogs => {
+        blogs.forEach(blog => {
+          this.addBlog(blog).subscribe();
+        });
+      }
+    ))
   }
 
   getBlogs() {
-    let blogs: Blog[] = JSON.parse(localStorage.getItem('blogs'));
-    if (!blogs)
-      this.initialSetup().subscribe(res => blogs = res);
-
-    return blogs;
+    return this.httpClient.get<Blog[]>(this.baseUrl).pipe(
+      map((blogs: Blog[]) => {
+        if (blogs.length < 1) {
+          this.initialSetUp().subscribe();
+          window.location.reload();
+        }
+        return blogs;
+      })
+    );
   }
 
-  getBlogById(id: string) : Blog {
-    const blogs = this.getBlogs();
-    return blogs.find(b => b.id === id);
+  getBlogById(id: string) {
+    return this.httpClient.get<Blog>(this.baseUrl + id);
   }
 
-  setBlogs(blogs: Blog[]) : void {
-    localStorage.setItem('blogs', JSON.stringify(blogs));
+  addBlog(blog: Blog) {
+    return this.httpClient.post<Blog>(this.baseUrl, blog)
+    .pipe(map(res => this.router.navigateByUrl('/')));
   }
 
-  addBlog(blog: Blog) : void {
-    let blogs = this.getBlogs();
-    blogs = [blog, ...blogs];
-    this.setBlogs(blogs);
-    this.router.navigateByUrl('/')
+  updateBlog(blog: Blog) {
+    return this.httpClient.put<Blog>(this.baseUrl + blog._id, blog)
+    .pipe(map(res => this.router.navigateByUrl('/blog/' + blog._id)));
   }
 
-  editBlog(blog: Blog) : void {
-    let blogs = this.getBlogs();
-    let index = blogs.findIndex(b => b.id == blog.id);
-    blogs[index] = blog;
-    this.setBlogs(blogs);
-    this.router.navigateByUrl('/blog/' + blog.id)
-
-  }
-
-  deleteBlog(id: string) : void {
-    let blogs = this.getBlogs();
-    blogs = blogs.filter(b => b.id !== id);
-    this.setBlogs(blogs);
-    this.router.navigateByUrl('/');
+  deleteBlog(id: string) {
+    return this.httpClient.delete<Blog>(this.baseUrl + id)
+      .pipe(map(res => this.router.navigateByUrl('/')));
   }
   
 }
